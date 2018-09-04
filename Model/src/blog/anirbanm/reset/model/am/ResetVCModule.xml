@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ResetVCModule"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="blog.anirbanm.reset.model.am.ResetVCModuleImpl"
+  ComponentInterface="blog.anirbanm.reset.model.am.common.ResetVCModule">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="EmployeesVO1"
+    ViewObjectName="blog.anirbanm.reset.model.view.EmployeesVO">
+    <ViewCriteriaUsage
+      Name="EmployeesSearchCriteria"
+      FullName="blog.anirbanm.reset.model.view.EmployeesVO.EmployeesSearchCriteria"/>
+  </ViewUsage>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="getAllBindVariables"
+      MethodName="getAllBindVariables">
+      <Return
+        Name="_return_type_"
+        Type="java.util.Collection"
+        IsGeneric="true">
+        <Element
+          Name="Variable"
+          Type="oracle.jbo.Variable"/>
+      </Return>
+      <Parameter
+        Name="voInstance"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="vcName"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="executeEmptyRowSet"
+      MethodName="executeEmptyRowSet">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="voInstance"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

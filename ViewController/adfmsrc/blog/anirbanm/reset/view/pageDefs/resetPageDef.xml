@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="resetPageDef"
+                Package="blog.anirbanm.reset.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="ResetVCModuleDataControl" Binds="EmployeesVO1.variablesMap.Bind_FirstName"
+                     Name="ExecuteWithParams_Bind_FirstName" IsQueriable="false"/>
+      <variableUsage DataControl="ResetVCModuleDataControl" Binds="EmployeesVO1.variablesMap.Bind_LastName"
+                     Name="ExecuteWithParams_Bind_LastName" IsQueriable="false"/>
+      <variableUsage DataControl="ResetVCModuleDataControl" Binds="EmployeesVO1.variablesMap.Bind_Email"
+                     Name="ExecuteWithParams_Bind_Email" IsQueriable="false"/>
+      <variableUsage DataControl="ResetVCModuleDataControl" Binds="EmployeesVO1.variablesMap.Bind_JobId"
+                     Name="ExecuteWithParams_Bind_JobId" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="EmployeesVO1" RangeSize="25" DataControl="ResetVCModuleDataControl" id="EmployeesVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesVO1Iterator" id="EmployeesVO1">
+      <nodeDefinition DefName="blog.anirbanm.reset.model.view.EmployeesVO" Name="EmployeesVO10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmployeesVO1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="Bind_FirstName" NDType="java.lang.String"
+                 NDValue="${bindings.ExecuteWithParams_Bind_FirstName}"/>
+      <NamedData NDName="Bind_LastName" NDType="java.lang.String"
+                 NDValue="${bindings.ExecuteWithParams_Bind_LastName}"/>
+      <NamedData NDName="Bind_Email" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_Bind_Email}"/>
+      <NamedData NDName="Bind_JobId" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_Bind_JobId}"/>
+    </action>
+    <attributeValues IterBinding="variables" id="Bind_FirstName">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_Bind_FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Bind_LastName">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_Bind_LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Bind_Email">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_Bind_Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Bind_JobId">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_Bind_JobId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="getAllBindVariables" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getAllBindVariables" IsViewObjectMethod="false" DataControl="ResetVCModuleDataControl"
+                  InstanceName="bindings.getAllBindVariables.dataControl.dataProvider"
+                  ReturnName="data.ResetVCModuleDataControl.methodResults.getAllBindVariables_getAllBindVariables_dataControl_dataProvider_getAllBindVariables_result">
+      <NamedData NDName="voInstance" NDType="java.lang.String"/>
+      <NamedData NDName="vcName" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="executeEmptyRowSet" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="executeEmptyRowSet" IsViewObjectMethod="false" DataControl="ResetVCModuleDataControl"
+                  InstanceName="bindings.executeEmptyRowSet.dataControl.dataProvider">
+      <NamedData NDName="voInstance" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

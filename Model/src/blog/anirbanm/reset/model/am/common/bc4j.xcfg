@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="blog.anirbanm.reset.model.am.ResetVCModule">
+    <AppModuleConfig name="ResetVCModuleLocal" jbo.project="blog.anirbanm.reset.model.Model"
+                     ApplicationName="blog.anirbanm.reset.model.am.ResetVCModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/HrDS"/>
+      <Security AppModuleJndiName="blog.anirbanm.reset.model.am.ResetVCModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="ResetVCModuleShared" jbo.project="blog.anirbanm.reset.model.Model"
+                     ApplicationName="blog.anirbanm.reset.model.am.ResetVCModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/HrDS"/>
+      <Security AppModuleJndiName="blog.anirbanm.reset.model.am.ResetVCModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

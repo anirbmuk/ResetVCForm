@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="blog.anirbanm.reset.view" ClientType="Generic">
+  <pageMap>
+    <page path="/reset.jspx" usageId="blog_anirbanm_reset_view_resetPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="blog_anirbanm_reset_view_resetPageDef" path="blog.anirbanm.reset.view.pageDefs.resetPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ResetVCModuleDataControl" Package="blog.anirbanm.reset.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ResetVCModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
